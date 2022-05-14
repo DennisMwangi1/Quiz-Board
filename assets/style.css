@@ -1,0 +1,32 @@
+body{
+    margin: 300px;
+    margin-top: 0%;
+    padding: 0%;
+    height: 30vh;
+}
+.mainheading{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    font-size: 70px;
+    font-family: 'Orbitron', sans-serif;
+}
+.namedate{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.quizboard{
+    
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+.quiz{
+    padding: 50px;
+    background-color: gray;
+}
+li{
+    list-style: none;
+    padding-bottom: 20px;
+}
