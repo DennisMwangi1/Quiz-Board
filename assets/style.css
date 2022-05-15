@@ -22,9 +22,10 @@ body{
     justify-content: center;
     background-color: gray;
 }
-.quiz{
+#quiz{
     padding: 50px;
     background-color: gray;
+    font-family: 'Truculenta', sans-serif;
 }
 li{
     list-style: none;

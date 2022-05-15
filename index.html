@@ -7,49 +7,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
     <title>Get Quizy</title>
 </head>
-<body>
+<body onload="loading()">
     <h1 class="mainheading">
         Get Quizy 
     </h1>    
-    <div class="quiz">
+    <div id="quiz">
         <div class="namedate">
-            <p>
-                Name
-            </p>
-            <p>
-                Date
-            </p>
+            <p> Name</p>
+            <p>Date</p>
         </div>
-        <h2>
+        <h2 id="question">
             Question
         </h2>
-        <ul>
+        <ul >
             <li>
-                <input type="radio" id="a" name="optionA" class="optionA">
-                <label for="a" id="textA">
-                    Hello
-                </label>
+                <input type="radio" id="a" name="answer" class="answer">
+                <label for="a" id="textA"> answer</label>
             </li>
             <li>
-                <input type="radio" id="b" name="optionB" class="optionB">
-                <label for="b" id="textB">
-                    Hello
-                </label>
+                <input type="radio" id="b" name="answer" class="answer">
+                <label for="b" id="textB"> answer </label>
             </li>
             <li>
-                <input type="radio" id="c" name="optionC" class="optionC">
-                <label for="c" id="textC">
-                    Hello
-                </label>
+                <input type="radio" id="c" name="answer" class="answer">
+                <label for="c" id="textC">answer</label>
             </li>
             <li>
-                <input type="radio" id="d" name="optionD" class="optionD">
-                <label for="d" id="textD">
-                    Hello
-                </label>
+                <input type="radio" id="d" name="answer" class="answer">
+                <label for="d" id="textD">answer</label>
             </li>
         </ul>
         <button id="submit">Submit</button>
