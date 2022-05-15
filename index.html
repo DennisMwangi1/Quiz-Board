@@ -12,36 +12,36 @@
     <link rel="stylesheet" href="assets/style.css">
     <title>Get Quizy</title>
 </head>
-<body onload="loading()">
+<body>
     <h1 class="mainheading">
         Get Quizy 
     </h1>    
     <div id="quiz">
         <div class="namedate">
-            <p onload="name()"> Name</p>
+            <p id="username" onload="name()"> Name</p>
             <p onload="date()">Date</p>
         </div>
         <h2 id="question">
             Question
         </h2>
-        <ul >
-            <li>
+        <form>
+            <div>
                 <input type="radio" id="a" name="answer" class="answer">
                 <label for="a" id="textA"> answer</label>
-            </li>
-            <li>
+            </div>
+            <div>
                 <input type="radio" id="b" name="answer" class="answer">
                 <label for="b" id="textB"> answer </label>
-            </li>
-            <li>
+            </div>
+            <div>
                 <input type="radio" id="c" name="answer" class="answer">
                 <label for="c" id="textC">answer</label>
-            </li>
-            <li>
+            </div>
+            <div>
                 <input type="radio" id="d" name="answer" class="answer">
                 <label for="d" id="textD">answer</label>
-            </li>
-        </ul>
+            </div>
+        </form>
         <button id="submit">Submit</button>
     </div>
     

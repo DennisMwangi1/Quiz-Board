@@ -30,9 +30,9 @@ body{
     color: black;
     border-radius: 20px;
 }
-li{
-    list-style: none;
-    padding-bottom: 20px;
+form>div{
+    
+    padding-bottom: 30px;
 }
 #submit{
     width: 100%;
