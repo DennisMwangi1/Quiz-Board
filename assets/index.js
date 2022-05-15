@@ -1,17 +1,10 @@
- /*function loading(){
-    alert("Welcome to Get Quizy.")
-}*/
-function name(){
-    let username = prompt("Please enter your name")
-    if(username != null){
-        document.getElementById("username").innerHTML=username
-    }else{
-        document.getElementById("username").innerText="player1"
-    }
-}
-function date(){
-   alert(Date) 
-}
+var user = document.getElementById("username");
+ var name = prompt("What is your name?");
+ confirm(name + ", welcome to Get Quizy");
+user.innerText = name;
+var date = new Date();
+document.getElementById("date").innerText = "Today is date " + date.getDate();
+
 
 const quizQuestions=[
     {
@@ -58,8 +51,8 @@ const quizQuestions=[
 ]
 
 var quiz = document.getElementById("quiz");
-var questionEl = document.getElementById("question");
-var answerEls = document.querySelectorAll(".answer");
+var question = document.getElementById("question");
+var answerlists = document.querySelectorAll(".answer");
 var textA = document.getElementById("textA");
 var textB = document.getElementById("textB");
 var textC = document.getElementById("textC");
@@ -78,7 +71,7 @@ function loadQuiz() {
 
     var firstQuestion=quizQuestions[currentQuestion];
 
-    questionEl.innerText = firstQuestion.question;
+    question.innerText = firstQuestion.question;
     textA.innerText = firstQuestion.a;
     textB.innerText = firstQuestion.b;
     textC.innerText = firstQuestion.c;
@@ -87,9 +80,9 @@ function loadQuiz() {
 
 function selectAnswer(){
     var answer;
-    answerEls.forEach((answerEl)=>{
-        if(answerEl.checked){
-            answer = answerEl.id
+    answerlists.forEach((answerlist)=>{
+        if(answerlist.checked){
+            answer = answerlist.id
         };
 
     });
@@ -97,18 +90,20 @@ function selectAnswer(){
 };
 
 submitbtn.addEventListener("click", function(){
-    var answer = selectAnswer();
+    var answer = selectAnswer()
     if(answer){
+        
         if(answer === quizQuestions[currentQuestion].correct){
             
-            score++;
+           score++; 
         };
+        
         currentQuestion++;
 
         if(currentQuestion<quizQuestions.length){
         loadQuiz();
         }else{
-            quiz.innerHTML = `<h2>You have scored ${total}/${quizQuestions.length} questions correctly`
+            quiz.innerHTML = `<h2>${name}, you have scored ${score}/${quizQuestions.length} questions correctly`
         };
     };
 });
