@@ -23,6 +23,11 @@ body{
     justify-content: center;
     background-color: gray;
 }
+#username{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+}
 #quiz{
     padding: 50px;
     background:linear-gradient(to left,rgb(255, 255, 255),rgba(0, 255, 255, 0.473));
