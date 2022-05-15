@@ -57,26 +57,26 @@ const quizQuestions=[
 
 ]
 
-const quiz = document.getElementById("quiz");
-const questionEl = document.getElementById("question");
-const answerEls = document.querySelectorAll(".answer");
-const textA = document.getElementById("textA");
-const textB = document.getElementById("textB");
-const textC = document.getElementById("textC");
-const textD = document.getElementById("textD");
-const submitbtn = document.getElementById("submit");
+var quiz = document.getElementById("quiz");
+var questionEl = document.getElementById("question");
+var answerEls = document.querySelectorAll(".answer");
+var textA = document.getElementById("textA");
+var textB = document.getElementById("textB");
+var textC = document.getElementById("textC");
+var textD = document.getElementById("textD");
+var submitbtn = document.getElementById("submitbtn");
 
 
 
-let currentQuestion = 0;
-let score = 0;
+var currentQuestion = 0;
+var score = 0;
 
 loadQuiz();
 
 function loadQuiz() {
    
 
-    const firstQuestion=quizQuestions[currentQuestion];
+    var firstQuestion=quizQuestions[currentQuestion];
 
     questionEl.innerText = firstQuestion.question;
     textA.innerText = firstQuestion.a;
@@ -86,12 +86,29 @@ function loadQuiz() {
 };
 
 function selectAnswer(){
-    let answer
+    var answer;
     answerEls.forEach((answerEl)=>{
         if(answerEl.checked){
             answer = answerEl.id
-        }
+        };
 
-    })
-    return answer
-}
+    });
+    return answer;
+};
+
+submitbtn.addEventListener("click", function(){
+    var answer = selectAnswer();
+    if(answer){
+        if(answer === quizQuestions[currentQuestion].correct){
+            
+            score++;
+        };
+        currentQuestion++;
+
+        if(currentQuestion<quizQuestions.length){
+        loadQuiz();
+        }else{
+            quiz.innerHTML = `<h2>You have scored ${total}/${quizQuestions.length} questions correctly`
+        };
+    };
+});
