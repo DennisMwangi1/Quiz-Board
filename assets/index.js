@@ -57,29 +57,41 @@ const quizQuestions=[
 
 ]
 
-const quiz = document.getElementById("quiz")
-const questionEl = document.getElementById("question")
-const answerEl = document.querySelectorAll(".answer")
-const textA = document.getElementById("textA")
-const textB = document.getElementById("textB")
-const textC = document.getElementById("textC")
-const textD = document.getElementById("textD")
-const submitbtn = document.getElementById("submit")
+const quiz = document.getElementById("quiz");
+const questionEl = document.getElementById("question");
+const answerEls = document.querySelectorAll(".answer");
+const textA = document.getElementById("textA");
+const textB = document.getElementById("textB");
+const textC = document.getElementById("textC");
+const textD = document.getElementById("textD");
+const submitbtn = document.getElementById("submit");
 
 
 
 let currentQuestion = 0;
 let score = 0;
 
-loadQuiz()
+loadQuiz();
 
 function loadQuiz() {
-    
-    const firstQuestion=quizQuestions[currentQuestion]
+   
 
-    questionEl.innerHTML = firstQuestion.question
-    textA.innerHTML = firstQuestion.a
-    textB.innerHTML = firstQuestion.b
-    textC.innerHTML = firstQuestion.c
-    textD.innerHTML = firstQuestion.d
+    const firstQuestion=quizQuestions[currentQuestion];
+
+    questionEl.innerText = firstQuestion.question;
+    textA.innerText = firstQuestion.a;
+    textB.innerText = firstQuestion.b;
+    textC.innerText = firstQuestion.c;
+    textD.innerText = firstQuestion.d;
+};
+
+function selectAnswer(){
+    let answer
+    answerEls.forEach((answerEl)=>{
+        if(answerEl.checked){
+            answer = answerEl.id
+        }
+
+    })
+    return answer
 }
