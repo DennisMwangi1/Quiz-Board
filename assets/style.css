@@ -30,9 +30,14 @@ body{
     color: black;
     border-radius: 20px;
 }
+#question{
+    font-size: 25px;
+}
 form>div{
     
     padding-bottom: 30px;
+    font-size: 15px;
+    font-family: 'Chakra Petch', sans-serif;
 }
 #submit{
     width: 100%;
