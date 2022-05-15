@@ -66,3 +66,20 @@ const textC = document.getElementById("textC")
 const textD = document.getElementById("textD")
 const submitbtn = document.getElementById("submit")
 
+
+
+let currentQuestion = 0;
+let score = 0;
+
+loadQuiz()
+
+function loadQuiz() {
+    
+    const firstQuestion=quizQuestions[currentQuestion]
+
+    questionEl.innerHTML = firstQuestion.question
+    textA.innerHTML = firstQuestion.a
+    textB.innerHTML = firstQuestion.b
+    textC.innerHTML = firstQuestion.c
+    textD.innerHTML = firstQuestion.d
+}
