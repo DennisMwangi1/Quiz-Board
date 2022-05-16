@@ -13,7 +13,7 @@ const quizQuestions=[
         b:"Hyper Type Markup Language",
         c:"Hyper Text Mark Language",
         d:"Hyper Text Markup Language",
-        correct:d
+        correct: "d",
     },
     {
         question:"What does CSS stand for?",
@@ -21,7 +21,7 @@ const quizQuestions=[
         b:"Cascading Style Sheets",
         c:"Cascading Simple Sheets",
         d:"It doesn't stand for anything",
-        correct:b 
+        correct:"b", 
     },
     {
         question:"Which of these is not a css selector?",
@@ -29,7 +29,7 @@ const quizQuestions=[
         b:"Id selector",
         c:"universal selector",
         d:"style selector",
-        correct:d
+        correct:"d",
     },
     {
         question:"How many divs can one have in an HTML document?",
@@ -37,7 +37,7 @@ const quizQuestions=[
         b:"less than 10",
         c:"As many as one please",
         d:"only 1",
-        correct:c 
+        correct:"c" 
     },
     {
         question:"When was javascript created?",
@@ -45,7 +45,7 @@ const quizQuestions=[
         b:"1996",
         c:"1994",
         d:"1997",
-        correct:a
+        correct:"a"
     }
 
 ]
@@ -68,7 +68,7 @@ loadQuiz();
 
 function loadQuiz() {
    
-
+    
     var firstQuestion=quizQuestions[currentQuestion];
 
     question.innerText = firstQuestion.question;
@@ -76,26 +76,28 @@ function loadQuiz() {
     textB.innerText = firstQuestion.b;
     textC.innerText = firstQuestion.c;
     textD.innerText = firstQuestion.d;
+    
 };
 
 function selectAnswer(){
-    var answer;
-    answerlists.forEach((answerlist)=>{
-        if(answerlist.checked){
+     var answer;
+    answerlists.forEach(answerlist => {
+        if (answerlist.checked) {
             answer = answerlist.id
         };
-
+        return answer;
     });
-    return answer;
 };
 
-submitbtn.addEventListener("click", function(){
-    var answer = selectAnswer()
+submitbtn.addEventListener("click", clickbtn())
+
+function clickbtn(){
+ var answer = selectAnswer();
     if(answer){
         
         if(answer === quizQuestions[currentQuestion].correct){
             
-           score++; 
+           score += 1; 
         };
         
         currentQuestion++;
@@ -103,7 +105,14 @@ submitbtn.addEventListener("click", function(){
         if(currentQuestion<quizQuestions.length){
         loadQuiz();
         }else{
-            quiz.innerHTML = `<h2>${name}, you have scored ${score}/${quizQuestions.length} questions correctly`
+            quiz.innerHTML = `<h2>${name}, you have answered ${score}/${quizQuestions.length} questions correctly.<br>
+            Refresh the page to go again  =)`
+            
+
         };
     };
-});
+
+}
+
+
+
