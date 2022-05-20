@@ -1,9 +1,9 @@
-var user = document.getElementById("username");
- var name = prompt("What is your name?");
- confirm(name + ", welcome to Get Quizy");
-user.innerText = name;
-var date = new Date();
-document.getElementById("date").innerText = "Today is date " + date.getDate();
+// var user = document.getElementById("username");
+//  var name = prompt("What is your name?");
+//  confirm(name + ", welcome to Get Quizy");
+// user.innerText = name;
+// var date = new Date();
+// document.getElementById("date").innerText = "Today is date " + date.getDate();
 
 
 const quizQuestions=[
@@ -48,11 +48,11 @@ const quizQuestions=[
         correct:"a"
     }
 
-]
+];
 
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var answerlists = document.querySelectorAll(".answer");
+var answerLists = document.querySelectorAll(".answer");
 var textA = document.getElementById("textA");
 var textB = document.getElementById("textB");
 var textC = document.getElementById("textC");
@@ -61,8 +61,8 @@ var submitbtn = document.getElementById("submitbtn");
 
 
 
-var currentQuestion = 0;
-var score = 0;
+let currentQuestion = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -79,20 +79,20 @@ function loadQuiz() {
     
 };
 
-function selectAnswer(){
-     var answer;
-    answerlists.forEach(answerlist => {
-        if (answerlist.checked) {
-            answer = answerlist.id
-        };
-        return answer;
-    });
-};
+function selectAnswer() {
+    let answer
+    answerLists.forEach(answerList => {
+        if(answerList.checked) {
+            answer = answerList.id
+        }
+    })
+    return answer
+}
 
-submitbtn.addEventListener("click", clickbtn())
+submitbtn.addEventListener('click', clickbtn())
 
 function clickbtn(){
- var answer = selectAnswer();
+ const answer = selectAnswer();
     if(answer){
         
         if(answer === quizQuestions[currentQuestion].correct){
