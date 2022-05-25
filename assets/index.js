@@ -1,9 +1,9 @@
-// var user = document.getElementById("username");
-//  var name = prompt("What is your name?");
-//  confirm(name + ", welcome to Get Quizy");
-// user.innerText = name;
-// var date = new Date();
-// document.getElementById("date").innerText = "Today is date " + date.getDate();
+var user = document.getElementById("username");
+ var name = prompt("What is your name?");
+ confirm(name + ", welcome to Get Quizy");
+user.innerText = name;
+var date = new Date();
+document.getElementById("date").innerText = "Today is date " + date.getDate();
 
 
 const quizQuestions=[
@@ -76,14 +76,22 @@ function loadQuiz() {
     textB.innerText = firstQuestion.b;
     textC.innerText = firstQuestion.c;
     textD.innerText = firstQuestion.d;
+
+    deselectAnswer();
     
 };
 
+function deselectAnswer(){
+    answerLists.forEach(answerLists =>{
+        answerLists.checked == false;
+    })
+}
+
 function selectAnswer() {
     let answer
-    answerLists.forEach(answerList => {
-        if(answerList.checked) {
-            answer = answerList.id
+    answerLists.forEach(answerLists => {
+        if(answerLists.checked) {
+            answer = answerLists.id
         }
     })
     return answer
