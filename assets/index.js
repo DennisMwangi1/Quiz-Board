@@ -48,11 +48,11 @@ const quizQuestions=[
         correct:"a"
     }
 
-]
+];
 
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var answerlists = document.querySelectorAll(".answer");
+var answerLists = document.querySelectorAll(".answer");
 var textA = document.getElementById("textA");
 var textB = document.getElementById("textB");
 var textC = document.getElementById("textC");
@@ -61,8 +61,8 @@ var submitbtn = document.getElementById("submitbtn");
 
 
 
-var currentQuestion = 0;
-var score = 0;
+let currentQuestion = 0;
+let score = 0;
 
 loadQuiz();
 
@@ -76,23 +76,33 @@ function loadQuiz() {
     textB.innerText = firstQuestion.b;
     textC.innerText = firstQuestion.c;
     textD.innerText = firstQuestion.d;
+
+    deselectAnswer();
     
 };
 
-function selectAnswer(){
-     var answer;
-    answerlists.forEach(answerlist => {
-        if (answerlist.checked) {
-            answer = answerlist.id
-        };
-        return answer;
-    });
-};
 
-submitbtn.addEventListener("click", clickbtn())
+function deselectAnswer(){
+    answerLists.forEach(answerLists =>{
+        answerLists.checked == false;
+    })
+}
+
+function selectAnswer() {
+    let answer
+    answerLists.forEach(answerLists => {
+        if(answerLists.checked) {
+            answer = answerLists.id
+        }
+    })
+    return answer
+}
+
+
+submitbtn.addEventListener('click', clickbtn())
 
 function clickbtn(){
- var answer = selectAnswer();
+ const answer = selectAnswer();
     if(answer){
         
         if(answer === quizQuestions[currentQuestion].correct){
