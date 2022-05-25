@@ -81,9 +81,9 @@ function loadQuiz() {
 
 function selectAnswer(){
      var answer;
-    answerlists.forEach(answerlist => {
-        if (answerlist.checked) {
-            answer = answerlist.id
+    answerlists.forEach(answerlists => {
+        if (answerlists.checked) {
+            answer = answerlists.id
         };
         return answer;
     });
