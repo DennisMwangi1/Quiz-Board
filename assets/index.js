@@ -81,6 +81,7 @@ function loadQuiz() {
     
 };
 
+
 function deselectAnswer(){
     answerLists.forEach(answerLists =>{
         answerLists.checked == false;
@@ -96,6 +97,7 @@ function selectAnswer() {
     })
     return answer
 }
+
 
 submitbtn.addEventListener('click', clickbtn())
 
